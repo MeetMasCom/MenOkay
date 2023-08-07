@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var controler_1 = require("./controler");
+var jwtHelper_1 = require("../../helpers/jwtHelper");
+var billeteraURoutes = (0, express_1.Router)();
+billeteraURoutes.get("/", jwtHelper_1.validateJwtHeader, controler_1.getAllBilleterasUserController);
+billeteraURoutes.get("/getByIdBilleteraU/:id", jwtHelper_1.validateJwtHeader, controler_1.getByIdBilleteraUserController);
+billeteraURoutes.get("/getByIdUserBilleteraU/:id", jwtHelper_1.validateJwtHeader, controler_1.getByIdUserBilleteraUserController);
+billeteraURoutes.put("/updateBilleteraU/:id", jwtHelper_1.validateJwtHeader, controler_1.updateBilleteraUserController);
+billeteraURoutes.post("/createBilleteraU", jwtHelper_1.validateJwtHeader, controler_1.createBilleteraUserController);
+billeteraURoutes.post("/validOtp", jwtHelper_1.validateJwtHeader, controler_1.validateOtpController);
+billeteraURoutes.get("/validOtp/:id", jwtHelper_1.validateJwtHeader, controler_1.createOtpController);
+exports.default = billeteraURoutes;

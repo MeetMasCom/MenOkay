@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var jwtHelper_1 = require("../../helpers/jwtHelper");
+var controler_1 = require("./controler");
+var express_validation_1 = require("express-validation");
+var validation_1 = require("./validation");
+var balanceUserRoutes = (0, express_1.Router)();
+balanceUserRoutes.get("/user/:id", [jwtHelper_1.validateJwtHeader, (0, express_validation_1.validate)(validation_1.getBalanceUserValidation)], controler_1.getBalanceUserController);
+balanceUserRoutes.post("/recharge", [jwtHelper_1.validateJwtHeader, (0, express_validation_1.validate)(validation_1.rechargeValidation)], controler_1.rechargeController);
+balanceUserRoutes.post("/review-recharge", [jwtHelper_1.validateJwtHeader, (0, express_validation_1.validate)(validation_1.reviewRechargeValidation)], controler_1.reviewRechargeController);
+balanceUserRoutes.get("/retreatAll", [jwtHelper_1.validateJwtHeader], controler_1.getAllRetreatController);
+balanceUserRoutes.post("/retreat", [jwtHelper_1.validateJwtHeader], controler_1.retreatController);
+balanceUserRoutes.get("/retreat/:id", [jwtHelper_1.validateJwtHeader], controler_1.getAllRetreatUserController);
+balanceUserRoutes.post("/review-retreat", [jwtHelper_1.validateJwtHeader], controler_1.reviewRetreatController);
+balanceUserRoutes.get("/:id", [jwtHelper_1.validateJwtHeader, (0, express_validation_1.validate)(validation_1.getBalanceUserValidation)], controler_1.getAllController);
+exports.default = balanceUserRoutes;
