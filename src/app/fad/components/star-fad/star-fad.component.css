@@ -1,0 +1,34 @@
+
+.cardimg{
+    max-width: 100%;
+    margin-bottom: 1.5em;
+    display: block;
+    outline: 2px solid #000;
+    outline-offset: -10px;
+    max-height: 500px !important;
+    
+    }
+    
+    .gallery{
+        columns: 5 120px;
+        column-gap: 1.5em;
+    }
+    
+    .estilo{
+        background-color: #F4F6F6 ;
+        margin-top: 2px;
+        font-size: smaller;
+        font-weight: bold;
+    }
+    
+   .nav-link:focus, .nav-link:hover,.nav-link.active{
+        background-color: #032b60;
+        color: #ffffff;
+    }
+
+    
+    .nav-link{
+        color: #032b60;
+    }
+
+    
