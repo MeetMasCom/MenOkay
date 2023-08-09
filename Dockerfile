@@ -10,6 +10,6 @@ COPY .  /data
 
 RUN npm install
 RUN npm run build
-EXPOSE 8000
+EXPOSE 4000
 
 CMD ["node", "./dist/out/main.js"]
