@@ -3,7 +3,7 @@ import { UserStateI, UserTypeI } from "../interfaces/user.interface";
 dotenv.config();
 
 export const HOST: string = process.env.HOST || "0.0.0.0";
-export const PORT: string = process.env.PORT || "8000";
+export const PORT: string = process.env.PORT || "4000";
 
 export const MONGO_DB_HOST: string = process.env.MONGO_DB_HOST || "0.0.0.0";
 export const MONGO_DB_PORT: number = Number(process.env.MONGO_DB_PORT) || 27017;
